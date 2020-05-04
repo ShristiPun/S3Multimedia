@@ -1,19 +1,19 @@
-var adminModel=require('../model/adminModel');
+var packageModel=require('../model/packageModel');
 
-exports.addAdmin=(req,res)=>{
-    const admin=new adminModel(req.body)
-admin.save().then(function(result){
+exports.addPackage=(req,res)=>{
+    const package=new packageModel(req.body)
+    package.save().then(function(result){
     console.log(result)
-    res.send("amin data has been added")
+    res.send("Package data has been added")
 }).catch(function(e){
     res.send(e)
     console.log(e)
 })
 }
 
-exports.getAdmin=(req,res)=>{
-    adminModel.find().then(function(admindata){
-        res.send(admindata)
+exports.getPackage=(req,res)=>{
+    packageModel.find().then(function(packagedata){
+        res.send(packagedata)
 
     }).catch(function(e){
         res.send(e)
@@ -22,6 +22,21 @@ exports.getAdmin=(req,res)=>{
     })
 }
 
-exports.delete
+exports.deletePackage=(req,res)=>{
+    packageModel.findByIdAndDelete(req.params._id).then(function(){
+        res.send("deleted")
+    }).catch(function(){
+        res.send(e)
+    });
+    
 
+}
 
+exports.updatePackage=(req,res)=>{
+    packageModel.findByIdAndDelete(req.params._id,req.body).then(function(){
+        res.send("updated")
+
+}).catch(function(e){
+        res.send(e)
+    })
+}

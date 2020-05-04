@@ -5,6 +5,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/S3Multimedia',{
     useNewUrlParser:true,
     useUnifiedTopology:false
 
-    
+    //mongo db ko libary lai mongose vancha
+
 })
 

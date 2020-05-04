@@ -22,6 +22,21 @@ exports.getAdmin=(req,res)=>{
     })
 }
 
-exports.delete
+exports.deleteAdmin=(req,res)=>{
+    adminModel.findByIdAndDelete(req.params._id).then(function(){
+        res.send("deleted")
+    }).catch(function(){
+        res.send(e)
+    });
+    
 
+}
 
+exports.updateAdmin=(req,res)=>{
+    adminModel.findByIdAndDelete(req.params._id,req.body).then(function(){
+        res.send("updated")
+
+}).catch(function(e){
+        res.send(e)
+    })
+}
