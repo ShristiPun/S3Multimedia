@@ -12,6 +12,11 @@ const path=require("path");
 //path used for allocate a file image,handle and transfer a file path 
 
 const app=express();
+
+const publicdirectory= path.join(__dirname,'public');
+app.use(express.static(publicdirectory));
+
+
 const adminRoute=require('./routers/adminRoute')
 const packageRoute=require('./routers/packageRoute')
 const photographytypesRoute=require('./routers/photographytypesRoute')
