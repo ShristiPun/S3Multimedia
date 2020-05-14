@@ -4,7 +4,7 @@ const photographytypesController=require('../controller/photographytypesControll
 
 router.post('/photographytypes',photographytypesController.addPhotographytypes)
 router.get('/photographytypes',photographytypesController.getPhotographytypes)
-router.delete('/photographytypes',photographytypesController.deletePhotographytypes)
-router.put('/photographytypes',photographytypesController.updatePhotographytypes)
+router.delete('/photographytypes/:_id',photographytypesController.deletePhotographytypes)
+router.put('/photographytypes/:_id',photographytypesController.updatePhotographytypes)
 module.exports=router
 

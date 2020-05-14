@@ -33,7 +33,7 @@ exports.deletePhotographytypes=(req,res)=>{
 }
 
 exports.updatePhotographytypes=(req,res)=>{
-    photographytypesModel.findByIdAndDelete(req.params._id,req.body).then(function(){
+    photographytypesModel.findByIdAndUpdate(req.params._id,req.body).then(function(){
         res.send("updated")
 
 }).catch(function(e){

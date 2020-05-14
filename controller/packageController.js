@@ -33,7 +33,7 @@ exports.deletePackage=(req,res)=>{
 }
 
 exports.updatePackage=(req,res)=>{
-    packageModel.findByIdAndDelete(req.params._id,req.body).then(function(){
+    packageModel.findByIdAndUpdate(req.params._id,req.body).then(function(){
         res.send("updated")
 
 }).catch(function(e){

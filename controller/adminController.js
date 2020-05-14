@@ -33,7 +33,7 @@ exports.deleteAdmin=(req,res)=>{
 }
 
 exports.updateAdmin=(req,res)=>{
-    adminModel.findByIdAndDelete(req.params._id,req.body).then(function(){
+    adminModel.findByIdAndUpdate(req.params._id,req.body).then(function(){
         res.send("updated")
 
 }).catch(function(e){

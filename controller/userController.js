@@ -33,7 +33,7 @@ exports.deleteUser=(req,res)=>{
 }
 
 exports.updateUser=(req,res)=>{
-    userModel.findByIdAndDelete(req.params._id,req.body).then(function(){
+    userModel.findByIdAndUpdate(req.params._id,req.body).then(function(){
         res.send("updated")
 
 }).catch(function(e){

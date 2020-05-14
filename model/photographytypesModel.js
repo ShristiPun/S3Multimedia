@@ -18,7 +18,12 @@ const PhotographyTypes=mongoose.model('PhotographyTypes',{
     price: {
         type: String,
         trim:true
+    },
+    image: {
+        type: String,
+        trim:true
     }
+    
 })
 
 

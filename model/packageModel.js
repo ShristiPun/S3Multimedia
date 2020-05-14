@@ -18,6 +18,10 @@ const Package=mongoose.model('Package',{
     price: {
         type: String,
         trim:true
+    },
+    image: {
+        type: String,
+        trim:true
     }
 })
 
