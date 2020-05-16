@@ -9,8 +9,6 @@ exports.addPhotographytypes=(req,res)=>{
             price:req.body.price
 
         }
-
-  
     const photographytypes=new photographytypesModel(photographytypesdata)
     photographytypes.save().then(function(){
     //console.log(result)
