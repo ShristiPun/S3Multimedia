@@ -33,4 +33,4 @@ var upload = multer({
 
  
 
-module.exports = uploadc
+module.exports = upload

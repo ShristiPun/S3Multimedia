@@ -1,13 +1,28 @@
 var userModel=require('../model/userModel');
 
 exports.addUser=(req,res)=>{
-    const user=new userModel(req.body)
-user.save().then(function(result){
-    console.log(result)
+
+    req.files.map(function(items){
+        const userdata={
+            image:items.filename,
+            user_name:req.body.user_name,
+            email:req.body.email,
+            dob:req.body.dob,
+            gender:req.body.gender,
+            address:req.body.address,
+            phone_number:req.body.phone_number,
+            password:req.body.password
+           
+
+        }
+
+    const user=new userModel(userdata)
+user.save().then(function(){
     res.send("user data has been added")
 }).catch(function(e){
     res.send(e)
-    console.log(e)
+ 
+})
 })
 }
 

@@ -1,13 +1,23 @@
 var packageModel=require('../model/packageModel');
 
 exports.addPackage=(req,res)=>{
-    const package=new packageModel(req.body)
-    package.save().then(function(result){
-    console.log(result)
+
+    req.files.map(function(items){
+        const packagedata={
+            image:items.filename,
+            package_name:req.body.package_name,
+            description:req.body.description,
+            price:req.body.price
+        }
+
+
+    const package=new packageModel(packagedata)
+    package.save().then(function(){
+ 
     res.send("Package data has been added")
 }).catch(function(e){
     res.send(e)
-    console.log(e)
+})
 })
 }
 
